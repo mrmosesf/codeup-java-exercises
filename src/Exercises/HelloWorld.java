@@ -1,3 +1,5 @@
+package Exercises;
+
 /**
  * Created by Moses Franco on 5/8/17
  * Codeup
