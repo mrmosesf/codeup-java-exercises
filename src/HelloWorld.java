@@ -4,9 +4,9 @@
  * Pinnacles
  */
 public class HelloWorld {
-//	psvm
+	//psvm
 	public static void main(String[] args) {
-//		sout
+		//sout
 		System.out.println("Hello world!");
 
 		int myFavoriteNumber = 64;
