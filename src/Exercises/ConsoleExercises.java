@@ -17,9 +17,9 @@ public class ConsoleExercises {
 		int resultInt = scanInt.nextInt();
 		System.out.println(resultInt);
 
-//		Ask user to input three words, then prints each word on a differnet line
+//		Ask user to input three words, then prints each word on a different line
 		System.out.println("Input three words");
-		Scanner scanStrings = new Scanner(System.in).useDelimiter("\\s+");
+		Scanner scanStrings = new Scanner(System.in).useDelimiter("\\s+"); //Turns out that the use of delimiter is kinda useless, going to keep it
 		String userString1 = scanStrings.next();
 		String userString2 = scanStrings.next();
 		String userString3 = scanStrings.next();
