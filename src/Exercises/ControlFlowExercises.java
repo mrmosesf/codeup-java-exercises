@@ -8,10 +8,8 @@ package Exercises;
 public class ControlFlowExercises {
 	public static void main(String[] args) {
 
-		long j = 2;
-		do {
-			System.out.println(j);
-			j*=j;
-		} while (j <= 1000000);
+		for (int i =5; i<=15; i++){
+			System.out.println(i);
+		}
 	}
 }
