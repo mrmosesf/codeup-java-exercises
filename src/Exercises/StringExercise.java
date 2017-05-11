@@ -7,7 +7,16 @@ package Exercises;
  */
 public class StringExercise {
 	public static void main(String[] args) {
-		String message = "I can do backslashes \\, double backslashes \\\\,\nand the amazing triple backslash \\\\\\";
-		System.out.println(message);
+		String message = "I found out about YOU!";
+
+		if (message.endsWith("?")) {
+			System.out.println("Sure.");
+		} else if (message.toUpperCase().equals(message)) {
+			System.out.println("Whoa, chill out!");
+		} else if (message.trim().equals("")) {
+			System.out.println("Fine. Be that way!");
+		} else {
+			System.out.println("Whatever");
+		}
 	}
 }
