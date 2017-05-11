@@ -1,5 +1,7 @@
 package Exercises;
 
+import java.util.Scanner;
+
 /**
  * Created by Moses Franco on 5/11/17
  * Codeup
@@ -7,7 +9,9 @@ package Exercises;
  */
 public class StringExercise {
 	public static void main(String[] args) {
-		String message = "I found out about YOU!";
+		Scanner input = new Scanner(System.in);
+
+		String message = input.nextLine();
 
 		if (message.endsWith("?")) {
 			System.out.println("Sure.");
