@@ -18,14 +18,17 @@ public class Methods {
 	}
 
 	public static int multiplication(int x, int y) {
-		return x * y;
+		int answer = 0;
+		for (int i=0; i<y; i++){
+			answer += x;
+		}
+		return answer;
 	}
 
 	public static int division(int x, int y) {
-		if(y != 0){
+		if (y != 0) {
 			return x / y;
-		}
-		else{
+		} else {
 			return 0;
 		}
 	}
@@ -57,6 +60,10 @@ public class Methods {
 
 	}
 
+//	public static int getInteger(int min, int max) {
+//		return 1;
+//	}
+
 
 	public static void main(String[] args) {
 		Scanner calculator = new Scanner(System.in);
@@ -67,6 +74,9 @@ public class Methods {
 		int a = calculator.nextInt();
 		System.out.println("Enter your second value:");
 		int b = calculator.nextInt();
+
+//		int min = calculator.nextInt();
+//		int max = calculator.nextInt();
 
 		System.out.println("Answer is: ");
 		calcBrain(a, b, operator);
