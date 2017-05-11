@@ -15,9 +15,9 @@ public class StringExercise {
 
 		if (message.endsWith("?")) {
 			System.out.println("Sure.");
-		} else if (message.toUpperCase().equals(message)) {
+		} else if (message.toUpperCase().equals(message) || message.endsWith("!") && !message.toLowerCase().equals(message)) {
 			System.out.println("Whoa, chill out!");
-		} else if (message.trim().equals("")) {
+		} else if (message.isEmpty()) {
 			System.out.println("Fine. Be that way!");
 		} else {
 			System.out.println("Whatever");
