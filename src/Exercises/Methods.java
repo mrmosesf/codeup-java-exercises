@@ -142,6 +142,26 @@ public class Methods {
 		} while (wishToContinue.equalsIgnoreCase("y"));
 	}
 
+	private static void guessingGame(Scanner userGuessing) {
+		int aGuess = (int) Math.floor(Math.random() * 100 + 1);
+		boolean guessedSuccess = false;
+		do {
+			System.out.println("Enter a number:");
+			int tempGuess = userGuessing.nextInt();
+
+			if (tempGuess == aGuess) {
+				guessedSuccess = true;
+				System.out.println("GOOD GUESS! The number was: " + aGuess);
+			}
+			else if(tempGuess > aGuess){
+				System.out.println("LOWER!");
+			}
+			else if(tempGuess < aGuess){
+				System.out.println("HIGHER");
+			}
+		} while (!guessedSuccess);
+	}
+
 
 	public static void main(String[] args) {
 		Scanner calculator = new Scanner(System.in);
@@ -157,8 +177,11 @@ public class Methods {
 //		Calls the method that will prompt the user for a number to calculate its factorial, until the user declines
 //		factorialCalc(calculator);
 
-		System.out.println("How many sides does your dice have?");
-		diceRoller(calculator.nextInt(), calculator);
+//		System.out.println("How many sides does your dice have?");
+//		diceRoller(calculator.nextInt(), calculator);
+
+		System.out.println("Let's play a game\nGuess what number I'm thinking of");
+		guessingGame(calculator);
 
 	}
 }
