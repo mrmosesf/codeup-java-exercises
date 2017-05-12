@@ -18,11 +18,19 @@ public class Methods {
 	}
 
 	public static int multiplication(int x, int y) {
-		int answer = 0;
-		for (int i=0; i<y; i++){
-			answer += x;
+//		int answer = 0;
+//		for (int i=0; i<y; i++){
+//			answer += x;
+//		}
+//		return answer;
+
+		if (x == 0 || y == 0) {
+			return 0;
+		} else if (y < 0) {
+			return multiplication(x, y + 1) + -x;
+		} else {
+			return multiplication(x, y - 1) + x;
 		}
-		return answer;
 	}
 
 	public static int division(int x, int y) {
