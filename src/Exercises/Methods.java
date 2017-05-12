@@ -23,17 +23,17 @@ public class Methods {
 
 	}
 
-	public static int addition(int x, int y) {
+	private static int addition(int x, int y) {
 //		Nothing fancy, you take two integers and you add them together
 		return x + y;
 	}
 
-	public static int subtraction(int x, int y) {
+	private static int subtraction(int x, int y) {
 //		Like the above method, but you subtract
 		return x - y;
 	}
 
-	public static int multiplication(int x, int y) {
+	private static int multiplication(int x, int y) {
 //		FOR loop to multiply by adding
 //      int answer = 0;
 //		for (int i=0; i<y; i++){
@@ -54,7 +54,7 @@ public class Methods {
 		}
 	}
 
-	public static int division(int x, int y) {
+	private static int division(int x, int y) {
 		if (y != 0) {   //Catches trying to divide by zero
 			return x / y;
 		} else {    //Returns zero, even though anything divided by zero isn't possible, can't return another result from this function
@@ -62,12 +62,12 @@ public class Methods {
 		}
 	}
 
-	public static int modulus(int x, int y) {
+	private static int modulus(int x, int y) {
 //		Just a vanilla modulus method
 		return x % y;
 	}
 
-	public static void calcBrain(int a, int b, String operator) {
+	private static void calcBrain(int a, int b, String operator) {
 
 //		Based on the operator, the switch case will then call the appropriate method to perform the actual calculation
 		switch (operator) {
@@ -92,7 +92,7 @@ public class Methods {
 
 	}
 
-	public static int getInteger(int min, int max) {
+	private static int getInteger(int min, int max) {
 
 //		Created a new Scanner because exercise calls for the above method signature
 		Scanner numberChecked = new Scanner(System.in);
@@ -126,8 +126,20 @@ public class Methods {
 //			Ask the user if they wish to continue, either satisfying the WHILE or not, stopping it
 			System.out.println("Want to continue?");
 			wishToContinue = calculator.next();
-		} while (wishToContinue.equalsIgnoreCase("y"));     //In a WHILE loop to check if the user wishes to continue factorial-izing(sp?)
+		}
+		while (wishToContinue.equalsIgnoreCase("y"));     //In a WHILE loop to check if the user wishes to continue factorial-izing(sp?)
 		return ans;
+	}
+
+	private static void diceRoller(int n, Scanner calculator) {
+		String wishToContinue;
+		do {
+			for (int i = 0; i < 2; i++) {
+				System.out.println("You rolled: " + (int) Math.floor(Math.random() * (n + 1)));
+			}
+			System.out.println("Want to keep rolling these dice?");
+			wishToContinue = calculator.next();
+		} while (wishToContinue.equalsIgnoreCase("y"));
 	}
 
 
@@ -143,7 +155,10 @@ public class Methods {
 //		int userInput = getInteger(1, 10);
 
 //		Calls the method that will prompt the user for a number to calculate its factorial, until the user declines
-		factorialCalc(calculator);
+//		factorialCalc(calculator);
+
+		System.out.println("How many sides does your dice have?");
+		diceRoller(calculator.nextInt(), calculator);
 
 	}
 }
