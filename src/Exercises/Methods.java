@@ -145,19 +145,20 @@ public class Methods {
 	private static void guessingGame(Scanner userGuessing) {
 		int aGuess = (int) Math.floor(Math.random() * 100 + 1);
 		boolean guessedSuccess = false;
+		int counter = 0;
 		do {
 			System.out.println("Enter a number:");
 			int tempGuess = userGuessing.nextInt();
 
 			if (tempGuess == aGuess) {
 				guessedSuccess = true;
-				System.out.println("GOOD GUESS! The number was: " + aGuess);
+				System.out.println("GOOD GUESS! The number was: " + aGuess + ". It took you " + ++counter + " attempts");
 			}
 			else if(tempGuess > aGuess){
-				System.out.println("LOWER!");
+				System.out.println("LOWER! You've tried " + ++counter + " times");
 			}
 			else if(tempGuess < aGuess){
-				System.out.println("HIGHER");
+				System.out.println("HIGHER You've tried " + ++counter + " times");
 			}
 		} while (!guessedSuccess);
 	}
