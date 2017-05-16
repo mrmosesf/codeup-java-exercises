@@ -109,7 +109,7 @@ public class Methods {
 		}
 	}
 
-	public static long factorialCalc(Scanner calculator) {
+	public static long factorialCalc(Scanner calculator) { //
 		String wishToContinue;
 		long ans;
 		do {
@@ -153,11 +153,9 @@ public class Methods {
 			if (tempGuess == aGuess) {
 				guessedSuccess = true;
 				System.out.println("GOOD GUESS! The number was: " + aGuess + ". It took you " + ++counter + " attempts");
-			}
-			else if(tempGuess > aGuess){
+			} else if (tempGuess > aGuess) {
 				System.out.println("LOWER! You've tried " + ++counter + " times");
-			}
-			else if(tempGuess < aGuess){
+			} else if (tempGuess < aGuess) {
 				System.out.println("HIGHER You've tried " + ++counter + " times");
 			}
 		} while (!guessedSuccess);
