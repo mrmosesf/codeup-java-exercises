@@ -25,6 +25,9 @@ public class Person {
 	}
 
 	public static void main(String[] args) {
-
+		Person jakeFromStateFarm = new Person("Jake");
+		System.out.println(jakeFromStateFarm.getName());
+		jakeFromStateFarm.setName("Jake, from State Farm");
+		jakeFromStateFarm.sayHello();
 	}
 }
