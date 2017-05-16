@@ -1,4 +1,4 @@
-package Exercises;
+package Exercises.Java1;
 
 /**
  * Created by Moses Franco on 5/8/17
