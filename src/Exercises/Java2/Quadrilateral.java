@@ -1,7 +1,7 @@
 package Exercises.Java2;
 
 /**
- * Created by mosesfranco on 5/19/17
+ * Created by Moses Franco on 5/19/17
  * Codeup
  * Pinnacles
  */
