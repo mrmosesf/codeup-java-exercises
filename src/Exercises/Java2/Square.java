@@ -5,20 +5,31 @@ package Exercises.Java2;
  * Codeup
  * Pinnacles
  */
-public class Square extends Rectangle {
-	//This variable in declared, but will not be ever initialized, while these two methods override the parent, the constructor does not
-	private int side;
+public class Square extends Quadrilateral {
 
-	//	Can be kept private since this class will use its parent's constructor, but will be public for testing purposes
 	public Square(int side) {
 		super(side, side);
 	}
 
-	public int getPerimeter() {
-		return 4 * side;
+	@Override
+	public double getPerimeter() {
+		return length * 4;
 	}
 
-	public int getArea() {
-		return side * side;
+	@Override
+	public double getArea() {
+		return width * width;
+	}
+
+	@Override
+	void setLength(int length) {
+		this.length = length;
+		this.width = length;
+	}
+
+	@Override
+	void setWidth(int width) {
+		this.length = width;
+		this.width = width;
 	}
 }

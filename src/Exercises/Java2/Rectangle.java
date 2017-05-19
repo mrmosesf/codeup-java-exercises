@@ -5,21 +5,29 @@ package Exercises.Java2;
  * Codeup
  * Pinnacles
  */
-public class Rectangle {
-	private int length;
-	private int width;
+public class Rectangle extends Quadrilateral implements Measurable {
 
-//	This constructor class should be kept private, since it can be called on my its children
 	public Rectangle(int length, int width) {
-		this.length = length;
-		this.width = width;
+		super(length, width);
 	}
 
-	public int getPerimeter() {
+	@Override
+	public double getPerimeter() {
 		return 2 * length + 2 * width;
 	}
 
-	public int getArea() {
+	@Override
+	public double getArea() {
 		return length * width;
+	}
+
+	@Override
+	void setLength(int length) {
+		this.length = length;
+	}
+
+	@Override
+	void setWidth(int width) {
+		this.width = width;
 	}
 }
