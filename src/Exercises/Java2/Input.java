@@ -15,7 +15,13 @@ public class Input {
 	}
 
 	public String getString() {
-		return this.scanner.nextLine();
+		String validating;
+		while(!this.scanner.hasNextLine()){
+			System.out.println("That's not a valid input");
+			getString();
+		}
+		validating = this.scanner.nextLine();
+		return validating;
 	}
 
 	public boolean yesNo() {
@@ -38,7 +44,7 @@ public class Input {
 		}
 	}
 
-	public int getInt(){
+	public int getInt() {
 		return this.scanner.nextInt();
 	}
 
@@ -53,7 +59,7 @@ public class Input {
 		}
 	}
 
-	public double getDouble(){
+	public double getDouble() {
 		return this.scanner.nextDouble();
 	}
 }

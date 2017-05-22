@@ -12,11 +12,7 @@ public class InputTest {
 		Scanner testScanner = new Scanner(System.in);
 		Input tester = new Input(testScanner);
 
-		System.out.println(tester.getInt(1, 10));
-		System.out.println(tester.getInt());
-
-		boolean foo = true;
-		System.out.println(tester.yesNo());
+		System.out.println(tester.getString());
 
 	}
 }
