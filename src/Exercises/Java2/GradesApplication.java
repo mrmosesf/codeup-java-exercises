@@ -41,22 +41,6 @@ public class GradesApplication {
 		getStudentInfo(students, scanner);
 	}
 
-	public static void seeAnotherStudent(Map<String, Student> students, Scanner scanner) {
-		System.out.println("\nWould you like to see another student?\n");
-		if (scanner.nextLine().equalsIgnoreCase("y")){
-			getStudentInfo(students, scanner);
-		}
-		else if (scanner.nextLine().equalsIgnoreCase("n")){
-			System.out.println("Goodbye, and have a wonderful day!");
-			System.exit(0);
-		}
-		else {
-			System.out.println("Hey, that's not really an answer");
-			seeAnotherStudent(students, scanner);
-		}
-		System.out.println(scanner);
-	}
-
 	public static void getStudentInfo(Map<String, Student> students, Scanner scanner) {
 		System.out.println("\nWhat student would you like to see more information on?\n");
 
@@ -65,12 +49,23 @@ public class GradesApplication {
 		if (students.get(checkMap) == null) {
 			System.out.println("Sorry, no student found with the github username of \"" + checkMap + "\".");
 			seeAnotherStudent(students, scanner);
+		} else {
+			System.out.println("\nName: " + students.get(checkMap).getName() + " - Github Username: " + checkMap + "\nCurrent Average: " + students.get(checkMap).getGradeAverage());
 		}
-		else {
-			System.out.println("\nName: "+students.get(checkMap).getName()+ " - Github Username: " + checkMap + "\nCurrent Average: "+ students.get(checkMap).getGradeAverage());
-		}
-		System.out.println(scanner);
 		seeAnotherStudent(students, scanner);
-		scanner.nextLine();
+	}
+
+	public static void seeAnotherStudent(Map<String, Student> students, Scanner scanner) {
+		System.out.println("\nWould you like to see another student?\n");
+		String userResponse = scanner.nextLine();
+		if (userResponse.equalsIgnoreCase("y")) {
+			getStudentInfo(students, scanner);
+		} else if (userResponse.equalsIgnoreCase("n")) {
+			System.out.println("Goodbye, and have a wonderful day!");
+			System.exit(0);
+		} else {
+			System.out.println("Hey, that's not really an answer");
+			seeAnotherStudent(students, scanner);
+		}
 	}
 }
