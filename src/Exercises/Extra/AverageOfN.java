@@ -14,7 +14,7 @@ public class AverageOfN {
 	}
 
 	private static void getNAverage(Scanner scanner) {
-		System.out.println("How many numbers do you want to average?");
+		System.out.println("\nHow many numbers do you want to average?");
 		int numbersNToAverage = scanner.nextInt();
 		double runningAverage = 0;
 
@@ -22,6 +22,6 @@ public class AverageOfN {
 			System.out.println("Enter number " + i);
 			runningAverage += scanner.nextDouble();
 		}
-		System.out.println("The average value is: " + runningAverage / numbersNToAverage);
+		System.out.printf("The average value is: %.2f%n", (runningAverage / numbersNToAverage));
 	}
 }
