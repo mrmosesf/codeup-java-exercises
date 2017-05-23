@@ -14,6 +14,7 @@ public class GradesApplication {
 		Map<String, Student> students = new HashMap<>();
 		Scanner scanner = new Scanner(System.in);
 
+//		While this demonstratedly works, instructor has gone through and created each Student object, and then later added them to the HashMap
 		students.put("stuj", new Student("Steve Jobs"));
 		students.get("stuj").addGrade(50);
 		students.get("stuj").addGrade(60);
@@ -41,14 +42,14 @@ public class GradesApplication {
 	}
 
 	public static void printStudents(Map<String, Student> students) {
-		students.forEach((key, value) -> System.out.print("|" + key + "| "));
+		students.forEach((key, value) -> System.out.print("|" + key + "| ")); //key, value could've been more meaningful
 	}
 
 	public static void getStudentInfo(Map<String, Student> students, Scanner scanner) {
 		System.out.println("\n\nWhat student would you like to see more information on?\n");
 
 		String checkMap = scanner.nextLine();
-
+//		if(students.containsKey(checkMap)) Alternative, and better method for the below IF method
 		if (students.get(checkMap) == null) {
 			System.out.println("Sorry, no student found with the github username of \"" + checkMap + "\".");
 			seeAnotherStudent(students, scanner);
