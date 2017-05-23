@@ -1,4 +1,4 @@
-package Exercises.Java2;
+package Exercises.Java2.Collections;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +37,6 @@ public class GradesApplication {
 		System.out.println("\nWelcome\nHere are the Github usernames of our students:\n");
 
 		printStudents(students);
-
 		getStudentInfo(students, scanner);
 	}
 
@@ -65,7 +64,9 @@ public class GradesApplication {
 
 	public static void seeAnotherStudent(Map<String, Student> students, Scanner scanner) {
 		System.out.println("\nWould you like to see another student?\n");
+
 		String userResponse = scanner.nextLine();
+
 		if (userResponse.equalsIgnoreCase("y")) {
 			getStudentInfo(students, scanner);
 		} else if (userResponse.equalsIgnoreCase("n")) {

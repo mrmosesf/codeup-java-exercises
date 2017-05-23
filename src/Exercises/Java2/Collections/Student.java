@@ -1,9 +1,9 @@
-package Exercises.Java2;
+package Exercises.Java2.Collections;
 
 import java.util.ArrayList;
 
 /**
- * Created by mosesfranco on 5/22/17
+ * Created by Moses Franco on 5/22/17
  * Codeup
  * Pinnacles
  */
