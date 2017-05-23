@@ -36,18 +36,26 @@ public class GradesApplication {
 
 		System.out.println("\nWelcome\nHere are the Github usernames of our students:\n");
 
-		students.forEach((key, value) -> System.out.print("|" + key + "| "));
+		printStudents(students);
 
 		getStudentInfo(students, scanner);
 	}
 
+	public static void printStudents(Map<String, Student> students) {
+		students.forEach((key, value) -> System.out.print("|" + key + "| "));
+	}
+
 	public static void getStudentInfo(Map<String, Student> students, Scanner scanner) {
-		System.out.println("\nWhat student would you like to see more information on?\n");
+		System.out.println("\n\nWhat student would you like to see more information on?\n");
 
 		String checkMap = scanner.nextLine();
 
 		if (students.get(checkMap) == null) {
 			System.out.println("Sorry, no student found with the github username of \"" + checkMap + "\".");
+			seeAnotherStudent(students, scanner);
+		} else if (checkMap.equalsIgnoreCase("help")) {
+			System.out.println("Here's the list of enrolled students again");
+			printStudents(students);
 			seeAnotherStudent(students, scanner);
 		} else {
 			System.out.println("\nName: " + students.get(checkMap).getName() + " - Github Username: " + checkMap + "\nCurrent Average: " + students.get(checkMap).getGradeAverage());
@@ -61,10 +69,13 @@ public class GradesApplication {
 		if (userResponse.equalsIgnoreCase("y")) {
 			getStudentInfo(students, scanner);
 		} else if (userResponse.equalsIgnoreCase("n")) {
-			System.out.println("Goodbye, and have a wonderful day!");
+			System.out.println("\nGoodbye, and have a wonderful day!");
 			System.exit(0);
+		} else if (userResponse.equalsIgnoreCase("help")) {
+			System.out.println("\nHere's the list currently enrolled students\n\n");
+			printStudents(students);
+			seeAnotherStudent(students, scanner);
 		} else {
-			System.out.println("Hey, that's not really an answer");
 			seeAnotherStudent(students, scanner);
 		}
 	}
