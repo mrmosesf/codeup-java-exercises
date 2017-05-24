@@ -12,7 +12,7 @@ public class InputTest {
 		Scanner testScanner = new Scanner(System.in);
 		Input tester = new Input(testScanner);
 
-		System.out.println(tester.getString());
+		System.out.println(tester.getDouble(1, 7));
 
 	}
 }
