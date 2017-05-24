@@ -34,9 +34,9 @@ public class Input {
 	}
 
 	public int getInt(int min, int max) {
-		int validatingInput = this.scanner.nextInt();
-		if (min <= validatingInput && max >= validatingInput) {
-			return validatingInput;
+		String validatingInput = this.scanner.nextLine();
+		if (min <= Integer.valueOf(validatingInput) && max >= Integer.valueOf(validatingInput)) {
+			return Integer.valueOf(validatingInput);
 		} else {
 			System.out.println("That number doesn't fall within the range, enter one between " + min + " and " + max);
 			getInt(min, max);
@@ -45,13 +45,14 @@ public class Input {
 	}
 
 	public int getInt() {
-		return this.scanner.nextInt();
+		String validatingInput = this.scanner.nextLine();
+		return Integer.valueOf(validatingInput);
 	}
 
 	public double getDouble(double min, double max) {
-		double validatingInput = this.scanner.nextDouble();
-		if (min <= validatingInput && max >= validatingInput) {
-			return validatingInput;
+		String validatingInput = this.scanner.nextLine();
+		if (min <= Double.valueOf(validatingInput) && max >= Double.valueOf(validatingInput)) {
+			return Double.valueOf(validatingInput);
 		} else {
 			System.out.println("That number doesn't fall within the range, enter one between " + min + " and " + max);
 			getDouble(min, max);
@@ -60,6 +61,7 @@ public class Input {
 	}
 
 	public double getDouble() {
-		return this.scanner.nextDouble();
+		String validatingInput = this.scanner.nextLine();
+		return Double.valueOf(validatingInput);
 	}
 }
