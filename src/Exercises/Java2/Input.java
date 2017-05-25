@@ -15,22 +15,18 @@ public class Input {
 	}
 
 	public String getString() {
-		String validating;
+		String validatingInput;
 		while (!this.scanner.hasNextLine()) {
 			System.out.println("That's not a valid input");
 			getString();
 		}
-		validating = this.scanner.nextLine();
-		return validating;
+		validatingInput = this.scanner.nextLine();
+		return validatingInput;
 	}
 
 	public boolean yesNo() {
 		String validatingInput = this.scanner.nextLine();
-		if ("y".equalsIgnoreCase(validatingInput) || "yes".equalsIgnoreCase(validatingInput)) {
-			return true;
-		} else {
-			return false;
-		}
+		return "y".equalsIgnoreCase(validatingInput) || "yes".equalsIgnoreCase(validatingInput);
 	}
 
 	public int getInt(int min, int max) {
